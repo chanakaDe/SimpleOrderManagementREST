@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" language="java" pageWidth="650" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="610" leftMargin="20" rightMargin="20" topMargin="10" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="loanNo" class="java.lang.String"/>
+	<parameter name="loanDate" class="java.lang.String"/>
+	<parameter name="loanAmount" class="java.lang.String"/>
+	<parameter name="withInterest" class="java.lang.String"/>
+	<parameter name="memNo" class="java.lang.String"/>
+	<parameter name="memName" class="java.lang.String"/>
+	<parameter name="idNo" class="java.lang.String"/>
+	<parameter name="telNo" class="java.lang.String"/>
+	<parameter name="busiType" class="java.lang.String"/>
+	<parameter name="loanType" class="java.lang.String"/>
+	<parameter name="loanIndex" class="java.lang.String"/>
+	<parameter name="interest" class="java.lang.String"/>
+	<parameter name="loanBalance" class="java.lang.String"/>
+	<parameter name="total Paid" class="java.lang.String"/>
+	<parameter name="officePay" class="java.lang.String"/>
+	<parameter name="underPay" class="java.lang.String"/>
+	<parameter name="notPaid" class="java.lang.String"/>
+	<parameter name="printedBy" class="java.lang.String"/>
+	<field name="dueDate" class="java.lang.String"/>
+	<field name="payDate" class="java.lang.String"/>
+	<field name="dueAmount" class="java.lang.String"/>
+	<field name="rate" class="java.lang.String"/>
+	<field name="reciptNo" class="java.lang.String"/>
+	<field name="payAmount" class="java.lang.String"/>
+	<field name="totalPaid" class="java.lang.String"/>
+	<field name="balance" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="54" splitType="Stretch">
+			<rectangle>
+				<reportElement x="232" y="8" width="137" height="42"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="242" y="21" width="116" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LEDGER REPORT]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="193" height="50"/>
+				<imageExpression><![CDATA["surathacredit.png"]]></imageExpression>
+			</image>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="487" y="30" width="122" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="461" y="8" width="64" height="20"/>
+				<textElement/>
+				<text><![CDATA[Printed by -]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="525" y="8" width="85" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{printedBy}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="184" splitType="Stretch">
+			<rectangle>
+				<reportElement x="404" y="16" width="205" height="161"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="2" y="13" width="108" height="17"/>
+				<box topPadding="1" bottomPadding="1"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Loan No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="30" width="108" height="17"/>
+				<box topPadding="1" bottomPadding="1"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Loan Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="47" width="108" height="17"/>
+				<box topPadding="1" bottomPadding="1"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Loan Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="64" width="108" height="17"/>
+				<box topPadding="1" bottomPadding="1"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount with inte]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="93" width="108" height="17"/>
+				<box topPadding="1" bottomPadding="1"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Member No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="110" width="108" height="17"/>
+				<box topPadding="1" bottomPadding="1"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Member Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="127" width="108" height="17"/>
+				<box topPadding="1" bottomPadding="1"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="144" width="108" height="17"/>
+				<box topPadding="1" bottomPadding="1"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tel.No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="161" width="108" height="17"/>
+				<box topPadding="1" bottomPadding="1"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Business Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="215" y="13" width="61" height="17"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Loan Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="30" width="61" height="17"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Loan Index]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="215" y="47" width="61" height="17"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Interest  (%)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="418" y="30" width="91" height="17"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Loan Balance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="418" y="81" width="91" height="17"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Paid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="418" y="98" width="91" height="17"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Office Payment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="418" y="115" width="91" height="17" forecolor="#2330F7"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Under Payment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="418" y="132" width="91" height="17" forecolor="#FF1800"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Not Paid]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="13" width="100" height="17"/>
+				<box topPadding="1" bottomPadding="1"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{loanNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="30" width="100" height="17"/>
+				<box topPadding="1" bottomPadding="1"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{loanDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="47" width="100" height="17"/>
+				<box topPadding="1" bottomPadding="1"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{loanAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="64" width="100" height="17"/>
+				<box topPadding="1" bottomPadding="1"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{withInterest}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="93" width="100" height="17"/>
+				<box topPadding="1" bottomPadding="1"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{memNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="110" width="271" height="17"/>
+				<box topPadding="1" bottomPadding="1"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{memName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="127" width="100" height="17"/>
+				<box topPadding="1" bottomPadding="1"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{idNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="144" width="100" height="17"/>
+				<box topPadding="1" bottomPadding="1"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{telNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="161" width="100" height="17"/>
+				<box topPadding="1" bottomPadding="1"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{busiType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="287" y="13" width="71" height="17"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{loanType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="287" y="30" width="71" height="17"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{loanIndex}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="287" y="47" width="71" height="17"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{interest}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="509" y="30" width="90" height="17"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{loanBalance}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="509" y="81" width="90" height="17"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{total Paid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="509" y="98" width="90" height="17"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{officePay}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="509" y="115" width="90" height="17" forecolor="#1115F1"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{underPay}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="509" y="132" width="90" height="17"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{notPaid}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="15" width="81" height="20"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Due date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="83" y="15" width="74" height="20"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pay Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="157" y="15" width="75" height="20"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Due Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="232" y="15" width="50" height="20"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="282" y="15" width="76" height="20"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Receipt No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="369" y="15" width="82" height="20"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pay Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="451" y="15" width="74" height="20"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TotalPaid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="525" y="15" width="73" height="20"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Balance]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="41" width="610" height="1"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="6" width="610" height="1"/>
+			</line>
+			<line>
+				<reportElement x="609" y="7" width="1" height="34"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="7" width="1" height="34"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="2" y="0" width="81" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{dueDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="83" y="0" width="74" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{payDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="157" y="0" width="75" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{dueAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="232" y="0" width="50" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{rate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="282" y="0" width="76" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{reciptNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="451" y="0" width="74" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{totalPaid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="525" y="0" width="74" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement>
+					<font isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{balance}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="358" y="0" width="93" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[    $F{payAmount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="115" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

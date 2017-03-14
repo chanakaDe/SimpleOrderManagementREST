@@ -1,0 +1,22 @@
+apply plugin: 'war'
+apply plugin: 'jetty'
+
+
+
+dependencies {
+    compile group: 'org.apache.logging.log4j', name: 'log4j-1.2-api', version: '2.0'
+    compile project(':main')
+    compile project(':basicweb')
+    compile project(':dbcontroller')
+    compile project(':OrderModule')
+
+    compile project(':ItemModule')
+    compile project(':ReportModule')
+    compile project(':UserModule')
+
+
+}
+//
+//jettyRun {
+//    httpPort = 8080
+//}

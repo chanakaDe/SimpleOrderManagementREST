@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="102"/>
+	<property name="ireport.y" value="409"/>
+	<parameter name="memCode" class="java.lang.String"/>
+	<parameter name="amount" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="nic" class="java.lang.String"/>
+	<parameter name="amountText" class="java.lang.String"/>
+	<parameter name="in" class="java.lang.String"/>
+	<parameter name="interestText" class="java.lang.String"/>
+	<parameter name="gName1" class="java.lang.String"/>
+	<parameter name="gName2" class="java.lang.String"/>
+	<parameter name="gName3" class="java.lang.String"/>
+	<parameter name="gName4" class="java.lang.String"/>
+	<parameter name="gNic1" class="java.lang.String"/>
+	<parameter name="gNic2" class="java.lang.String"/>
+	<parameter name="gNic3" class="java.lang.String"/>
+	<parameter name="gNic4" class="java.lang.String"/>
+	<parameter name="gAddress1" class="java.lang.String"/>
+	<parameter name="gAddress2" class="java.lang.String"/>
+	<parameter name="gAddress3" class="java.lang.String"/>
+	<parameter name="gAddress4" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="802" height="79"/>
+				<imageExpression><![CDATA["chanakaHead.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="569" y="47" width="79" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mem Code : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="648" y="47" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{memCode}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="35" y="50" width="115" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="361" y="26" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="476" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="802" height="364"/>
+				<imageExpression><![CDATA["chanakaMidle.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="84" y="334" width="296" height="60"/>
+				<imageExpression><![CDATA["chanakaDown.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="84" y="403" width="296" height="60"/>
+				<imageExpression><![CDATA["chanakaDown.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="396" y="334" width="296" height="60"/>
+				<imageExpression><![CDATA["chanakaDown.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="396" y="403" width="296" height="60"/>
+				<imageExpression><![CDATA["chanakaDown.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="138" y="2" width="223" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="3" width="203" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="13" y="49" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{nic}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="66" width="322" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{amountText}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="660" y="65" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="309" y="143" width="87" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{interestText}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="407" y="144" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{in}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="167" width="351" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{amountText}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="610" y="169" width="115" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="169" y="348" width="100" height="15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gName1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="488" y="416" width="100" height="14"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gName4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="169" y="361" width="100" height="12"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gNic1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="489" y="361" width="100" height="12"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gNic2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="169" y="430" width="100" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gNic3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="488" y="430" width="100" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gNic4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="169" y="374" width="155" height="16"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gAddress1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="373" width="158" height="17"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gAddress2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="443" width="154" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gAddress3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="489" y="444" width="159" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gAddress4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="416" width="100" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gName3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="348" width="100" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gName2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+</jasperReport>

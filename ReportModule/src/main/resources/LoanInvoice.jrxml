@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" language="java" pageWidth="595" pageHeight="421" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.4641000000000015"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="21"/>
+	<parameter name="no" class="java.lang.String"/>
+	<parameter name="dataset1" class="java.lang.String"/>
+	<parameter name="number" class="java.lang.String"/>
+	<parameter name="telNo" class="java.lang.String"/>
+	<parameter name="fax" class="java.lang.String"/>
+	<parameter name="email" class="java.lang.String"/>
+	<parameter name="vatNo" class="java.lang.String"/>
+	<parameter name="receiptNo" class="java.lang.String"/>
+	<parameter name="contactNp" class="java.lang.String"/>
+	<parameter name="thanksName" class="java.lang.String"/>
+	<parameter name="thanksAddress" class="java.lang.String"/>
+
+	<parameter name="totalAmount" class="java.lang.String"/>
+	<parameter name="paymentMode" class="java.lang.String"/>
+	<parameter name="cashier" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="imagePath" class="java.lang.String"/>
+	<field name="description" class="java.lang.String"/>
+	<field name="amount" class="java.lang.String"/>
+	<field name="vatNo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="106" splitType="Stretch">
+			<staticText>
+				<reportElement x="346" y="27" width="97" height="13"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="376" y="42" width="155" height="15" forecolor="#FEFEFE" backcolor="#413737"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TAX RECEIPT]]></text>
+			</staticText>
+			<image>
+				<reportElement x="3" y="0" width="136" height="40"/>
+				<imageExpression><![CDATA[$P{imagePath}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="443" y="14" width="111" height="13"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="202" y="61" width="27" height="13"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Fax :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="229" y="61" width="88" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fax}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="268" y="74" width="131" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{vatNo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="281" y="91" width="94" height="15" forecolor="#FEFEFE" backcolor="#413737"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contract No.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="376" y="61" width="179" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{email}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="204" y="75" width="64" height="12"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[VAT NO.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="94" y="92" width="175" height="14"/>
+				<box leftPadding="10">
+					<pen lineColor="#AA9292"/>
+					<topPen lineWidth="1.0" lineColor="#AA9292"/>
+					<leftPen lineWidth="1.0" lineColor="#AA9292"/>
+					<bottomPen lineWidth="1.0" lineColor="#AA9292"/>
+					<rightPen lineWidth="1.0" lineColor="#AA9292"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{receiptNo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="333" y="61" width="43" height="13"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[E-Mail :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="31" y="73" width="121" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{telNo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="73" width="27" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Tel :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2" y="91" width="91" height="15" forecolor="#FEFEFE" backcolor="#413737"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Receipt No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="346" y="14" width="97" height="13"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[No.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="376" y="92" width="179" height="14"/>
+				<box leftPadding="10">
+					<pen lineColor="#AA9292"/>
+					<topPen lineWidth="1.0" lineColor="#AA9292"/>
+					<leftPen lineWidth="1.0" lineColor="#AA9292"/>
+					<bottomPen lineWidth="1.0" lineColor="#AA9292"/>
+					<rightPen lineWidth="1.0" lineColor="#AA9292"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{contactNp}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="443" y="27" width="111" height="13"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="61" width="180" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{address}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="151" y="30" width="151" height="12" forecolor="#FEFEFE" backcolor="#413737"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Branch Address & Tele Nos.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="39" width="180" height="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[on account of the following]]></text>
+			</staticText>
+
+			<staticText>
+				<reportElement x="1" y="3" width="61" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Received with thanks from]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="49" y="15" width="13" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[of]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="62" y="15" width="178" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{thanksAddress}.toUpperCase()]]></textFieldExpression>
+			</textField>
+
+			<textField>
+				<reportElement x="62" y="3" width="217" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{thanksName}.toUpperCase()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="12" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="303" y="0" width="140" height="12" forecolor="#FEFEFE" backcolor="#413737"/>
+				<box>
+					<pen lineColor="#3D2F2F"/>
+					<topPen lineWidth="1.0" lineColor="#3D2F2F"/>
+					<leftPen lineWidth="1.0" lineColor="#3D2F2F"/>
+					<bottomPen lineWidth="1.0" lineColor="#3D2F2F"/>
+					<rightPen lineWidth="1.0" lineColor="#3D2F2F"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="443" y="0" width="111" height="12" forecolor="#FEFEFE" backcolor="#413737"/>
+				<box>
+					<pen lineColor="#3D2F2F"/>
+					<topPen lineWidth="1.0" lineColor="#3D2F2F"/>
+					<leftPen lineWidth="1.0" lineColor="#3D2F2F"/>
+					<bottomPen lineWidth="1.0" lineColor="#3D2F2F"/>
+					<rightPen lineWidth="1.0" lineColor="#3D2F2F"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[VAT Rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="-1" y="0" width="303" height="12" forecolor="#FEFEFE" backcolor="#413737"/>
+				<box>
+					<pen lineColor="#3D2F2F"/>
+					<topPen lineWidth="1.0" lineColor="#3D2F2F"/>
+					<leftPen lineWidth="1.0" lineColor="#3D2F2F"/>
+					<bottomPen lineWidth="1.0" lineColor="#3D2F2F"/>
+					<rightPen lineWidth="1.0" lineColor="#3D2F2F"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<textField>
+				<reportElement x="302" y="0" width="141" height="12"/>
+				<box>
+					<pen lineColor="#3D2F2F"/>
+					<topPen lineWidth="1.0" lineColor="#3D2F2F"/>
+					<leftPen lineWidth="1.0" lineColor="#3D2F2F"/>
+					<bottomPen lineWidth="1.0" lineColor="#3D2F2F"/>
+					<rightPen lineWidth="1.0" lineColor="#3D2F2F"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="0" width="111" height="12"/>
+				<box>
+					<pen lineColor="#3D2F2F"/>
+					<topPen lineWidth="1.0" lineColor="#3D2F2F"/>
+					<leftPen lineWidth="1.0" lineColor="#3D2F2F"/>
+					<bottomPen lineWidth="1.0" lineColor="#3D2F2F"/>
+					<rightPen lineWidth="1.0" lineColor="#3D2F2F"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vatNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-1" y="0" width="303" height="12"/>
+				<box leftPadding="10">
+					<pen lineColor="#3D2F2F"/>
+					<topPen lineWidth="1.0" lineColor="#3D2F2F"/>
+					<leftPen lineWidth="1.0" lineColor="#3D2F2F"/>
+					<bottomPen lineWidth="1.0" lineColor="#3D2F2F"/>
+					<rightPen lineWidth="1.0" lineColor="#3D2F2F"/>
+				</box>
+				<textElement verticalAlignment="Middle" rotation="None">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{description}.toUpperCase()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="150" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="94" height="12"/>
+				<box leftPadding="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[ Mode of Payment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="47" width="95" height="10"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Cashier]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="94" y="0" width="185" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{paymentMode}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="460" y="37" width="95" height="10"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[....................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="37" width="444" height="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[In the event this receipt is issued in a Terminated Contract, this payment is accepted without prejudice to our Legal Rights.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="459" y="22" width="96" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cashier}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="28" width="304" height="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Check are Subject to realisation.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="37" width="13" height="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[*]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="27" width="13" height="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="302" y="0" width="141" height="12"/>
+				<box>
+					<pen lineColor="#241F1F"/>
+					<topPen lineWidth="1.0" lineColor="#241F1F"/>
+					<leftPen lineWidth="1.0" lineColor="#241F1F"/>
+					<bottomPen lineWidth="1.0" lineColor="#241F1F"/>
+					<rightPen lineWidth="1.0" lineColor="#241F1F"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalAmount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
